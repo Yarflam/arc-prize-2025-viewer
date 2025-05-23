@@ -1,9 +1,9 @@
 import json
 
-parent = 'RickG/'
-input_file = f'{parent}arc-agi_test_challenges.json'
-output_file = f'{parent}submission.json'
-html_file = 'RickG.html'
+folder = 'Yarflam'
+input_file = f'{folder}/arc-agi_test_challenges.json'
+output_file = f'{folder}/submission.json'
+html_file = f'{folder}.html'
 
 colors = [
     '#000000',
@@ -30,6 +30,9 @@ html = f'{html}<body style="display:flex;flex-wrap:wrap;gap:30px;justify-content
 
 # Matrix to HTML
 def matrixHTML(mtx, size=20):
+    if not len(mtx) or not len(mtx[0]):
+        print('Err: Wrong Matrix')
+        return '<div>(WRONG MATRIX)</div>'
     w, h = len(mtx[0]), len(mtx)
     html = f'<div style="display:flex;flex-wrap:wrap;width:{w*size}px;height:{h*size}px">\n'
     for row in mtx:
